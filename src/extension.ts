@@ -1,6 +1,10 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
+import { Context } from 'mocha';
+import 'Math';
+import { getVSCodeDownloadUrl } from 'vscode-test/out/util';
+//import { URI } from 'vscode-uri';
 
 
 //https://stackoverflow.com/questions/35435042/how-can-i-define-an-array-of-objects
@@ -10,11 +14,19 @@ let learningUrls: { language: string, URLs: string[] }[] = [
 		'https://www.edx.org/course/cs50s-introduction-to-computer-science',
 		'https://www.programiz.com/c-programming'
 		]},
-		{'language': 'python', "URLs": [
-			'http://www.pythontutor.com/visualize.html',
-			'https://www.edx.org/course/introduction-to-computer-science-and-programming-7',
+	{'language': 'Python', "URLs": [
+		'http://www.pythontutor.com/visualize.html',
+		'https://www.edx.org/course/introduction-to-computer-science-and-programming-7',
 		]}
 	];
+
+function searchLanguages(lang: string, langUrlArray: { language: string, URLs: string[] }[]){
+	for(var i=0; i < langUrlArray.length; i++){
+		if (langUrlArray[i].language === lang){
+			return langUrlArray[i];
+		}
+	}
+}
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
@@ -39,17 +51,26 @@ export function activate(context: vscode.ExtensionContext) {
 
 		//Initial testing
 		let message = 'You want to learn a programming language?\n';
-
-		let endIdx = learningUrls.length - 1;
-		learningUrls.forEach(element => {
-			message = message + element.language;
-			if(learningUrls.indexOf(element) < endIdx) {
-				message = message + " or ";
+		const items: string[] = learningUrls.map(element => element.language);
+		//let qpopts = vscode.
+		//  https://code.visualstudio.com/api/references/vscode-api
+		const lang = vscode.window.showQuickPick(items, 
+			{placeHolder:"What language do you want to learn about?"} );
+		lang.then( (value) => {
+			if(value) {
+				vscode.window.showInformationMessage(value + " was selected!");
+				let languageObj = searchLanguages(value, learningUrls);
+				if(!languageObj){vscode.window.showErrorMessage("Could not find that language...");}
+				else {
+					let url = languageObj.URLs[Math.floor(Math.random() * languageObj?.URLs.length)];
+					vscode.window.showInformationMessage("Now going to " + url);
+					//let uri = URI.parse(url);
+					//vscode.env.openExternal(uri);
+				}
 			}
-			message = message + "\n";
 		});
+		
 
-		vscode.window.showInformationMessage(message);
 	});
 
 	context.subscriptions.push(disposable);
