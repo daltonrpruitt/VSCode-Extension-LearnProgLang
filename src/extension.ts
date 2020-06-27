@@ -2,19 +2,19 @@
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
 
-// List of urls to use
-const learningUrls = {
-	'C' : [
+
+//https://stackoverflow.com/questions/35435042/how-can-i-define-an-array-of-objects
+let learningUrls: { language: string, URLs: string[] }[] = [
+	{'language': 'C', "URLs": [
 		'https://www.learn-c.org/',
 		'https://www.edx.org/course/cs50s-introduction-to-computer-science',
 		'https://www.programiz.com/c-programming'
-		],
-	'Python' : [
-		'http://www.pythontutor.com/visualize.html',
-		'https://www.edx.org/course/introduction-to-computer-science-and-programming-7',
-		]
-
-};
+		]},
+		{'language': 'python', "URLs": [
+			'http://www.pythontutor.com/visualize.html',
+			'https://www.edx.org/course/introduction-to-computer-science-and-programming-7',
+		]}
+	];
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
@@ -38,8 +38,18 @@ export function activate(context: vscode.ExtensionContext) {
 	let learn = vscode.commands.registerCommand('learnprogramminglanguages.learn', () =>{
 
 		//Initial testing
-		vscode.window.showInformationMessage('You want to learn a programming language?');
+		let message = 'You want to learn a programming language?\n';
 
+		let endIdx = learningUrls.length - 1;
+		learningUrls.forEach(element => {
+			message = message + element.language;
+			if(learningUrls.indexOf(element) < endIdx) {
+				message = message + " or ";
+			}
+			message = message + "\n";
+		});
+
+		vscode.window.showInformationMessage(message);
 	});
 
 	context.subscriptions.push(disposable);
