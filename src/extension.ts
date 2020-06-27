@@ -20,7 +20,17 @@ export function activate(context: vscode.ExtensionContext) {
 		vscode.window.showInformationMessage('Hello World from VSCodeExtensionTest!');
 	});
 
+	// Learn a new language
+	let learn = vscode.commands.registerCommand('learnprogramminglanguages.learn', () =>{
+
+		//Initial testing
+		vscode.window.showInformationMessage('You want to learn a programming language?');
+
+	});
+
 	context.subscriptions.push(disposable);
+	context.subscriptions.push(learn);
+
 }
 
 // this method is called when your extension is deactivated
