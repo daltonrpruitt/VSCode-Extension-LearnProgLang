@@ -1,7 +1,7 @@
 {
-	"name": "vscodeextensiontest",
-	"displayName": "VSCodeExtensionTest",
-	"description": "Trying to test how to make a VS Code Extension. ",
+	"name": "learnprogramminglanguages",
+	"displayName": "Learn Programming Languages",
+	"description": "Helping students find online programming language resources more quickly.",
 	"version": "0.0.1",
 	"engines": {
 		"vscode": "^1.46.0"
@@ -10,13 +10,13 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:vscodeextensiontest.helloWorld"
+		"*"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "vscodeextensiontest.helloWorld",
+				"command": "learnprogramminglanguages.helloWorld",
 				"title": "Hello World"
 			}
 		]
