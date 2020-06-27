@@ -2,6 +2,20 @@
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
 
+// List of urls to use
+const learningUrls = {
+	'C' : [
+		'https://www.learn-c.org/',
+		'https://www.edx.org/course/cs50s-introduction-to-computer-science',
+		'https://www.programiz.com/c-programming'
+		],
+	'Python' : [
+		'http://www.pythontutor.com/visualize.html',
+		'https://www.edx.org/course/introduction-to-computer-science-and-programming-7',
+		]
+
+};
+
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
