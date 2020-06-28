@@ -1,3 +1,7 @@
+// This file contains the implementation of the learning resource generation, the result of which 
+// is an array of programming languages grouped with an array of URLs to (hopefully) useful resources. 
+import * as vscode from 'vscode';
+import { URI } from 'vscode-uri';
 
 // Github page with curated list of resources
 let masterList = 'https://github.com/Michael0x2a/curated-programming-resources/blob/master/resources.md';
@@ -18,7 +22,7 @@ export let learningUrls: { language: string, URLs: string[] }[] = [
 	];
 
 export function generateLearningResources() {
-    
+
 }
 
 
