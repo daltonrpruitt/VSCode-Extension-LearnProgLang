@@ -5,28 +5,8 @@ import { Context } from 'mocha';
 import 'Math';
 import { getVSCodeDownloadUrl } from 'vscode-test/out/util';
 import { URI } from 'vscode-uri';
+import { learningUrls, searchLanguages } from './learningResourcesGenerator';
 
-
-//https://stackoverflow.com/questions/35435042/how-can-i-define-an-array-of-objects
-let learningUrls: { language: string, URLs: string[] }[] = [
-	{'language': 'C', "URLs": [
-		'https://www.learn-c.org/',
-		'https://www.edx.org/course/cs50s-introduction-to-computer-science',
-		'https://www.programiz.com/c-programming'
-		]},
-	{'language': 'Python', "URLs": [
-		'http://www.pythontutor.com/visualize.html',
-		'https://www.edx.org/course/introduction-to-computer-science-and-programming-7',
-		]}
-	];
-
-function searchLanguages(lang: string, langUrlArray: { language: string, URLs: string[] }[]){
-	for(var i=0; i < langUrlArray.length; i++){
-		if (langUrlArray[i].language === lang){
-			return langUrlArray[i];
-		}
-	}
-}
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
