@@ -4,7 +4,7 @@ import * as vscode from 'vscode';
 import { Context } from 'mocha';
 import 'Math';
 import { getVSCodeDownloadUrl } from 'vscode-test/out/util';
-//import { URI } from 'vscode-uri';
+import { URI } from 'vscode-uri';
 
 
 //https://stackoverflow.com/questions/35435042/how-can-i-define-an-array-of-objects
@@ -64,8 +64,8 @@ export function activate(context: vscode.ExtensionContext) {
 				else {
 					let url = languageObj.URLs[Math.floor(Math.random() * languageObj?.URLs.length)];
 					vscode.window.showInformationMessage("Now going to " + url);
-					//let uri = URI.parse(url);
-					//vscode.env.openExternal(uri);
+					let uri = URI.parse(url);
+					vscode.env.openExternal(uri);
 				}
 			}
 		});
