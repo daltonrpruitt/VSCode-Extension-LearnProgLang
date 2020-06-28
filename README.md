@@ -1,6 +1,6 @@
-# vscodeextensiontest README
+# Learn Programming Languages VS Code Extension README
 
-This is the README for your extension "vscodeextensiontest". After writing up a brief description, we recommend including the following sections.
+This extension for Visual Studio Code is meant to help new programming learners find useful resources quickly. 
 
 ## Features
 
@@ -14,18 +14,8 @@ For example if there is an image subfolder under your extension project workspac
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+The extension must be installed either via the VS Code Extension Marketplace or by downloading the repo into the extension folder of your VS Code distribution. 
 
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
 
 ## Known Issues
 
