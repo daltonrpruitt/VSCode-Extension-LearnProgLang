@@ -95,8 +95,7 @@ export let learningUrls: { language: string, URLs: string[] }[] = [
 		'https://docs.microsoft.com/en-us/learn/paths/csharp-first-steps/'
     ]},
     {'language' : 'JavaScript', "URLs" : [
-		'http://www.codecademy.com/tracks/javascript',
-        'http://www.codecademy.com/tracks/jquery',
+		'https://www.codecademy.com/learn/introduction-to-javascript',
         'https://www.udacity.com/course/ud804',
         'https://www.khanacademy.org/computing/computer-programming',
         'http://teamtreehouse.com/features/javascript',
