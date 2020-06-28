@@ -17,6 +17,11 @@ export let learningUrls: { language: string, URLs: string[] }[] = [
 		]}
 	];
 
+export function generateLearningResources() {
+    
+}
+
+
 export function searchLanguages(lang: string, langUrlArray: { language: string, URLs: string[] }[]){
 	for(var i=0; i < langUrlArray.length; i++){
 		if (langUrlArray[i].language === lang){

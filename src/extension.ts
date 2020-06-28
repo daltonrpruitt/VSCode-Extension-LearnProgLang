@@ -40,7 +40,7 @@ export function activate(context: vscode.ExtensionContext) {
 			if(value) {
 				vscode.window.showInformationMessage(value + " was selected!");
 				let languageObj = searchLanguages(value, learningUrls);
-				if(!languageObj){vscode.window.showErrorMessage("Could not find that language...");}
+				if(!languageObj){vscode.window.showErrorMessage("Could not find that language...");} // this should not happen...
 				else {
 					let url = languageObj.URLs[Math.floor(Math.random() * languageObj?.URLs.length)];
 					vscode.window.showInformationMessage("Now going to " + url);
