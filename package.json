@@ -16,12 +16,8 @@
 	"contributes": {
 		"commands": [
 			{
-				"command": "learnprogramminglanguages.helloWorld",
-				"title": "Hello World"
-			},
-			{
 				"command": "learnprogramminglanguages.learn",
-				"title": "Learn "
+				"title": "Learn"
 			}
 		]
 	},
