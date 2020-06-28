@@ -35,7 +35,7 @@ export function activate(context: vscode.ExtensionContext) {
 		//let qpopts = vscode.
 		//  https://code.visualstudio.com/api/references/vscode-api
 		const lang = vscode.window.showQuickPick(items, 
-			{placeHolder:"What language do you want to learn about?"} );
+			{placeHolder:"What topic would you like to learn about?"} );
 		lang.then( (value) => {
 			if(value) {
 				vscode.window.showInformationMessage(value + " was selected!");
