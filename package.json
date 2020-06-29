@@ -1,8 +1,13 @@
 {
 	"name": "learnprogramminglanguages",
 	"displayName": "Learn Programming Languages",
-	"description": "Helping students find online programming language resources more quickly.",
-	"version": "0.1.1",
+	"description": "VS Code Extension to help new programmers find online programming resources more quickly.",
+	"version": "1.1.1",
+	"publisher": "daltonrpruitt",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/daltonrpruitt/VSCode-Extension-LearnProgLang"
+	},
 	"engines": {
 		"vscode": "^1.46.0"
 	},
@@ -30,16 +35,18 @@
 		"test": "node ./out/test/runTest.js"
 	},
 	"devDependencies": {
-		"@types/vscode": "^1.46.0",
 		"@types/glob": "^7.1.1",
 		"@types/mocha": "^7.0.2",
 		"@types/node": "^13.11.0",
-		"eslint": "^6.8.0",
-		"@typescript-eslint/parser": "^2.30.0",
+		"@types/vscode": "^1.46.0",
 		"@typescript-eslint/eslint-plugin": "^2.30.0",
+		"@typescript-eslint/parser": "^2.30.0",
+		"bufferutil": "^4.0.1",
+		"eslint": "^6.8.0",
 		"glob": "^7.1.6",
 		"mocha": "^7.1.2",
 		"typescript": "^3.8.3",
+		"utf-8-validate": "^5.0.2",
 		"vscode-test": "^1.3.0"
 	},
 	"dependencies": {
